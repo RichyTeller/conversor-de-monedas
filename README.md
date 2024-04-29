@@ -7,4 +7,7 @@
 - Se implementó la clase ConsultaApi para realizar las consultas.
 - Se implementó una nueva clase de record para recibir datos de monedas.
 - Se implementó la clase Principal para el uso del programa.
-- Se modificó el código de la clase Principal para el uso correcto del programa
+- Se modificó el código de la clase Principal para el uso correcto del programa.
+- Se somete el programa bajo diferentes pruebas para comprobar su rendimiento.
+- Se comprueba que el programa es funcional.
+- Se concluye el desarrollo del código con éxito.
