@@ -4,8 +4,7 @@ import com.aluracursos.challenge.Consultas.ConsultaApi;
 import com.aluracursos.challenge.Consultas.ValorMonedas;
 
 import java.io.IOException;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Principal{
     public static void main(String[] args) throws IOException, InterruptedException {
@@ -32,7 +31,13 @@ public class Principal{
             // Obtener todas las tasas de conversión disponibles
             Map<String, Double> valorMonedas = monedas.conversion_rates();
             System.out.println(menu);
-            opcion = teclado.nextInt();
+            try {
+                opcion = teclado.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("*** Debe proporcionar un valor numérico ***");
+                teclado.next(); // Limpia el buffer del Scanner para evitar un bucle infinito
+            }
+            try {
                 switch (opcion){
                     case 1:
                         System.out.println("Ingrese el valor que desea convertir:");
@@ -99,6 +104,13 @@ public class Principal{
                     default:
                         System.out.println("Ingrese una opción válida!");
                 }
+            } catch (InputMismatchException e) {
+                System.out.println("*** " +
+                        "Debe proporcionar un valor numérico *** " +
+                        "\nPor favor seleccione una opcioón de nuevo.");
+                teclado.next(); // Limpia el buffer del Scanner para evitar un bucle infinito
+                continue;
+            }
             if (opcion == 7){
                 System.out.println("Finalizando el programa... ¡¡Gracias!!");
                 break;
@@ -106,4 +118,3 @@ public class Principal{
         }
     }
 }
-
