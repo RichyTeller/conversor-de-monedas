@@ -23,6 +23,5 @@ public class ConsultaApi {
         Gson gson = new Gson();
         return gson.fromJson(json, ValorMonedas.class);
     }
-
 }
 
